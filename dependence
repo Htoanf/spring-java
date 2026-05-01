@@ -8,6 +8,12 @@
       			<groupId>com.mysql</groupId>
       			<artifactId>mysql-connector-j</artifactId>
       		</dependency>
+* kết nối sql trong property
+         spring.jpa.hibernate.ddl-auto=update
+         spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/laptopshop
+         spring.datasource.username=root
+         spring.datasource.password=hantoan2k5
+         spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 * thêm security
           <dependency>
         			<groupId>org.springframework.boot</groupId>
