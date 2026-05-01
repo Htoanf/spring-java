@@ -1,0 +1,15 @@
+*auto upadate ko cần dừng project
+         <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-devtools</artifactId>
+      </dependency>
+* kết nối sql
+        <dependency>
+      			<groupId>com.mysql</groupId>
+      			<artifactId>mysql-connector-j</artifactId>
+      		</dependency>
+* thêm security
+          <dependency>
+        			<groupId>org.springframework.boot</groupId>
+        			<artifactId>spring-boot-starter-security</artifactId>
+        		</dependency>
