@@ -1,0 +1,5 @@
+để hiển thị từ controller sang view thì ghi &{...} trong jsp.
+model.addattribute(a,b) a là tên biến, b là giá trị
+cứ thêm cái này vào đầu jsp
+ <%@page contentType="text/html" pageEncoding="UTF-8" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
