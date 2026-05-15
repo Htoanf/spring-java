@@ -8,3 +8,21 @@ kết nối
 * kết nối jsp 
          spring.mvc.view.prefix=/WEB-INF/view/
          spring.mvc.view.suffix=.jsp
+*cách 2 kết nối jsp ( nhớ tạo WebMvcConfig.java trong phần config) 
+         @Configuration
+         @EnableWebMvc
+         public class WebMvcConfig implements WebMvcConfigurer {
+             @Bean
+             public ViewResolver viewResolver() {
+                 final InternalResourceViewResolver bean = new InternalResourceViewResolver();
+                 bean.setViewClass(JstlView.class);
+                 bean.setPrefix("/WEB-INF/view/");
+                 bean.setSuffix(".jsp");
+                 return bean;
+             }
+         
+             @Override
+             public void configureViewResolvers(ViewResolverRegistry registry) {
+                 registry.viewResolver(viewResolver());
+             }
+         }
