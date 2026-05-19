@@ -1,0 +1,22 @@
+tạo để cấu hình lại web
+         @Configuration
+         @EnableWebMvc
+         public class WebMvcConfig implements WebMvcConfigurer {
+             @Bean                                                                                        cấu hình jsp
+             public ViewResolver viewResolver() {
+                 final InternalResourceViewResolver bean = new InternalResourceViewResolver();
+                 bean.setViewClass(JstlView.class);
+                 bean.setPrefix("/WEB-INF/view/");
+                 bean.setSuffix(".jsp");
+                 return bean;
+             }
+         
+             @Override
+             public void configureViewResolvers(ViewResolverRegistry registry) {
+                 registry.viewResolver(viewResolver());
+             }
+             @Override                                                                                      cấu hình để dùng được css
+                public void addResourceHandlers(ResourceHandlerRegistry registry) {
+                    registry.addResourceHandler("/css/**").addResourceLocations("/resources/css/");
+                }
+         }
